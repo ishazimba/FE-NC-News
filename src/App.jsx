@@ -5,6 +5,7 @@ import NavBar from "./components/NavBar";
 
 import Home from "./components/Home";
 import ArticlesList from "./components/ArticlesList";
+import IndividualArticle from "./components/IndividualArticle";
 function App() {
   return (
     <>
@@ -15,6 +16,10 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />}></Route>
             <Route path="/articles" element={<ArticlesList />}></Route>
+            <Route
+              path="/articles/:article_id"
+              element={<IndividualArticle />}
+            ></Route>
           </Routes>
         </main>
       </BrowserRouter>

@@ -1,14 +1,8 @@
 import { Link } from "react-router-dom";
+function RecentArticles(props) {
+  const { article_id, title, imageUrl, author, votes, created_at, comments } =
+    props;
 
-function ArticleCard({
-  article_id,
-  title,
-  imageUrl,
-  author,
-  votes,
-  created_at,
-  comments,
-}) {
   const date = new Date(created_at).toLocaleDateString();
 
   return (
@@ -25,4 +19,4 @@ function ArticleCard({
     </article>
   );
 }
-export default ArticleCard;
+export default RecentArticles;
