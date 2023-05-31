@@ -12,15 +12,16 @@ function ArticleCard({
   const date = new Date(created_at).toLocaleDateString();
   return (
     <>
-      <article className="card">
+      <article className="card" key={article_id} to={`articles/${article_id}`}>
         <p className="date">Date: {date}</p>
-        <Link key={article_id} to={`articles/${article_id}`}>
+
+        <Link>
           <h3>{title}</h3>
-          <img src={imageUrl} alt={title} />
-          <p>By: {author}</p>
-          <p>Votes: {votes}</p>
-          <p>Comments: {comments}</p>
         </Link>
+        <img src={imageUrl} alt={title} />
+        <p>By: {author}</p>
+        <p>Votes: {votes}</p>
+        <p>Comments: {comments}</p>
       </article>
     </>
   );
