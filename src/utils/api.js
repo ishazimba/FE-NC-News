@@ -21,9 +21,9 @@ export function GetArticleById(article_id) {
       console.log(error);
     });
 }
-export function GetRecentArticles(order) {
+export function GetRecentArticles(desc) {
   return api
-    .get(`/articles?order=${order}`)
+    .get(`/articles?order=${desc}`)
     .then(({ data }) => {
       const articles = data.articles.map((article) => {
         return {
