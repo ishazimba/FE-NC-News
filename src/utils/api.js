@@ -42,3 +42,13 @@ export function GetRecentArticles(desc) {
       console.log(error);
     });
 }
+export function GetCommentsById(article_id) {
+  return api
+    .get(`/articles/${article_id}/comments`)
+    .then(({ data }) => {
+      return data.article;
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+}

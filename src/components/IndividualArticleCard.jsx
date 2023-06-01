@@ -12,11 +12,14 @@ function IndividualArticleCard({
   const date = new Date(created_at).toLocaleDateString();
   return (
     <article className="IndividualArticle">
-      <h3>{title}</h3>
+      <h1>{title}</h1>
       <p>🕙 {date}</p>
       <img src={imageUrl} alt={title}></img>
-      <p>By: {author}</p> <p>Votes: {votes}</p>
+      <p>
+        By: {author} &nbsp;&nbsp;&nbsp; ⬆️{votes}
+      </p>
       <Link to={`/articles/:article_id/comments`}>
+        {" "}
         <p>View comments: 💬 {comments}</p>
       </Link>
       <p>{body}</p>
