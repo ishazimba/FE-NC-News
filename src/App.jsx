@@ -13,7 +13,7 @@ function App() {
       <BrowserRouter>
         <Header />
         <NavBar />
-        <main>
+        <main className="mainContent">
           <Routes>
             <Route path="/" element={<Home />}></Route>
             <Route path="/articles" element={<ArticlesList />}></Route>

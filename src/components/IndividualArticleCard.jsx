@@ -1,8 +1,9 @@
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import CommentsList from "./CommentsList";
 import Comments from "./Comments";
+
 function IndividualArticleCard({
   title,
-  article_id,
   created_at,
   comments,
   imageUrl,
@@ -10,22 +11,35 @@ function IndividualArticleCard({
   votes,
   body,
 }) {
+  const [showComments, setShowComments] = useState(false);
+
   const date = new Date(created_at).toLocaleDateString();
+
+  const handleViewComments = () => {
+    setShowComments(true);
+  };
+
   return (
     <article className="IndividualArticle">
       <h1>{title}</h1>
       <p>🕙 {date}</p>
-      <img src={imageUrl} alt={title}></img>
+      <img src={imageUrl} alt={title} />
       <p>
         By: {author} &nbsp;&nbsp;&nbsp; ⬆️{votes}
       </p>
-      <Link to={`/articles/${article_id}/comments`}>
-        <p>View comments: 💬 </p>
-        {comments}
-      </Link>
-
+      <p className="commentsspan">
+        <span onClick={handleViewComments} style={{ cursor: "pointer" }}>
+          View comments: 💬
+        </span>
+      </p>
+      {showComments && (
+        <>
+          <Comments comments={comments} />
+        </>
+      )}
       <p>{body}</p>
     </article>
   );
 }
+
 export default IndividualArticleCard;

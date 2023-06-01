@@ -1,8 +1,37 @@
 #root {
-  max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+}
+@media (max-width: 768px) {
+  /* Styles for screens smaller than 768px */
+  #root {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  /* Styles for screens smaller than 576px */
+}
+.App {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: min-content auto auto;
+  grid-template-areas:
+    "header"
+    "nav"
+    "content"
+    "main";
+}
+
+@media only screen and (min-width: 600px) {
+  .App {
+    grid-template-columns: 25% 75%;
+    grid-template-rows: min-content auto;
+    grid-template-areas:
+      "header header"
+      "nav content";
+  }
 }
 h1 {
   font-size: 2.4em;
@@ -116,4 +145,11 @@ a:hover {
 }
 .comments p {
   margin: 0;
+}
+.commentsspan {
+  font-size: large;
+  text-decoration: underline;
+}
+.commentsspan :hover {
+  color: green;
 }

@@ -7,12 +7,18 @@ function Comments({}) {
   const { article_id } = useParams();
 
   const [comments, setComments] = useState([]);
+  const [isLoading, setIsLoading] = useState([]);
 
   useEffect(() => {
+    setIsLoading(true);
     GetCommentsById(article_id).then((data) => {
       setComments(data);
+      setIsLoading(false);
     });
   }, [article_id]);
+  if (isLoading) {
+    return <p>Loading...</p>;
+  }
 
   return (
     <>
