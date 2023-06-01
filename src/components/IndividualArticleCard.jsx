@@ -18,6 +18,9 @@ function IndividualArticleCard({
   const handleViewComments = () => {
     setShowComments(true);
   };
+  const handleHideComments = () => {
+    setShowComments(false);
+  };
 
   return (
     <article className="IndividualArticle">
@@ -35,8 +38,18 @@ function IndividualArticleCard({
       {showComments && (
         <>
           <Comments comments={comments} />
+          <p className="commentsspan">
+            <span
+              className="commentsspan"
+              onClick={handleHideComments}
+              style={{ cursor: "pointer" }}
+            >
+              Hide comments 🫣
+            </span>
+          </p>
         </>
       )}
+
       <p>{body}</p>
     </article>
   );
