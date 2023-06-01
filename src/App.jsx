@@ -5,7 +5,7 @@ import NavBar from "./components/NavBar";
 
 import Home from "./components/Home";
 import ArticlesList from "./components/ArticlesList";
-import IndividualArticle from "./components/IndividualArticle";
+import IndividualArticleContainer from "./components/IndividualArticleContainer";
 import Comments from "./components/Comments";
 function App() {
   return (
@@ -13,17 +13,17 @@ function App() {
       <BrowserRouter>
         <Header />
         <NavBar />
-        <main>
+        <main className="mainContent">
           <Routes>
             <Route path="/" element={<Home />}></Route>
             <Route path="/articles" element={<ArticlesList />}></Route>
             <Route
               path="/articles/:article_id"
-              element={<IndividualArticle />}
+              element={<IndividualArticleContainer />}
             ></Route>
             <Route
               path="/articles/:article_id/comments"
-              element={Comments}
+              element={<Comments />}
             ></Route>
           </Routes>
         </main>
