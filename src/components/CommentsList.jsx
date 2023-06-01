@@ -1,4 +1,5 @@
-function CommentsList({ body, author, votes, date }) {
+function CommentsList({ body, author, votes, created_at }) {
+  const date = new Date(created_at).toLocaleDateString();
   return (
     <article className="comments">
       <p className="dateAndcomments">

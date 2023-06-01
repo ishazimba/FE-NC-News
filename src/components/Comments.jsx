@@ -22,7 +22,6 @@ function Comments({}) {
 
   return (
     <>
-      <h1>Comments</h1>
       <main className="commentsContainer">
         {comments.map((comment, index) => (
           <CommentsList
@@ -30,7 +29,7 @@ function Comments({}) {
             body={comment.body}
             author={comment.author}
             votes={comment.votes}
-            date={comment.created_at}
+            created_at={comment.created_at}
           />
         ))}
       </main>
