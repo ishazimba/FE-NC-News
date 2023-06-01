@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 
 function Comments({}) {
   const { article_id } = useParams();
-  console.log(article_id);
+
   const [comments, setComments] = useState([]);
 
   useEffect(() => {

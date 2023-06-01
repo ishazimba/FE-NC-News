@@ -46,7 +46,6 @@ export function GetCommentsById(article_id) {
   return api
     .get(`/articles/${article_id}/comments`)
     .then(({ data }) => {
-      console.log(data.comments);
       return data.comments;
     })
     .catch((error) => {});
