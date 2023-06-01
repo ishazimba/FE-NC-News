@@ -1,9 +1,10 @@
 function CommentsList({ body, author, votes, date }) {
   return (
     <article className="comments">
-      <p>
-        By: {author} &nbsp;&nbsp; ⬆️ {votes} &nbsp;&nbsp; {date}
+      <p className="dateAndcomments">
+        {date} &nbsp;&nbsp; ⬆️ {votes}
       </p>
+      <p>Author: {author}</p>
       <p className="commentsbody">{body}</p>
     </article>
   );

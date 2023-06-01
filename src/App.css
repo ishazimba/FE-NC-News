@@ -105,6 +105,7 @@ a:hover {
   width: 600px;
   align-content: center;
   text-align: justify;
+  margin: 30px;
 }
 .commentsbody {
   padding: 5px;
@@ -112,4 +113,7 @@ a:hover {
   border-radius: 10px;
   border-width: 2px;
   border-color: green;
+}
+.comments p {
+  margin: 0;
 }
