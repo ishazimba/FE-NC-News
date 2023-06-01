@@ -26,6 +26,7 @@ function IndividualArticle() {
     <>
       <IndividualArticleCard
         key={currArticle.article_id}
+        article_id={currArticle.article_id}
         title={currArticle.title}
         topic={currArticle.topic}
         author={currArticle.author}

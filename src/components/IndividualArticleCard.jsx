@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import Comments from "./Comments";
 function IndividualArticleCard({
   title,
+  article_id,
   created_at,
   comments,
   imageUrl,
@@ -18,10 +19,11 @@ function IndividualArticleCard({
       <p>
         By: {author} &nbsp;&nbsp;&nbsp; ⬆️{votes}
       </p>
-      <Link to={`/articles/:article_id/comments`}>
-        {" "}
-        <p>View comments: 💬 {comments}</p>
+      <Link to={`/articles/${article_id}/comments`}>
+        <p>View comments: 💬 </p>
+        {comments}
       </Link>
+
       <p>{body}</p>
     </article>
   );

@@ -97,3 +97,19 @@ a:hover {
   padding: 0;
   text-align: justify;
 }
+.commentsContainer {
+  padding-left: 100px;
+  align-content: center;
+}
+.comments {
+  width: 600px;
+  align-content: center;
+  text-align: justify;
+}
+.commentsbody {
+  padding: 5px;
+  border: solid;
+  border-radius: 10px;
+  border-width: 2px;
+  border-color: green;
+}

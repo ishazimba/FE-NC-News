@@ -23,7 +23,7 @@ function App() {
             ></Route>
             <Route
               path="/articles/:article_id/comments"
-              element={Comments}
+              element={<Comments />}
             ></Route>
           </Routes>
         </main>
