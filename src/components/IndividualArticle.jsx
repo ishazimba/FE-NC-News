@@ -1,5 +1,5 @@
 import { useState } from "react";
-import CommentsList from "./CommentsList";
+
 import Comments from "./Comments";
 import VoteAdder from "./VoteAdder";
 
@@ -37,8 +37,14 @@ function IndividualArticle({
           View comments: 💬
         </span>
       </p>
+
       {showComments && (
         <>
+          <p className="commentsspan">
+            <span onClick={handleHideComments} style={{ cursor: "pointer" }}>
+              Hide comments ⌃
+            </span>
+          </p>
           <Comments comments={comments} />
           <p className="commentsspan">
             <span onClick={handleHideComments} style={{ cursor: "pointer" }}>
