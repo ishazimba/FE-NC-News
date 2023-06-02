@@ -3,15 +3,26 @@
   padding: 2rem;
   text-align: center;
 }
-@media (max-width: 768px) {
-  /* Styles for screens smaller than 768px */
+/* Desktop styles */
+@media (min-width: 1024px) {
+  /* CSS rules for desktop screens */
+}
+
+/* Tablet styles */
+@media (min-width: 768px) and (max-width: 1023px) {
   #root {
     padding: 1rem;
   }
+  /* CSS rules for tablet screens */
 }
 
-@media (max-width: 576px) {
-  /* Styles for screens smaller than 576px */
+/* Mobile styles */
+@media (max-width: 767px) {
+  /* CSS rules for mobile screens */
+}
+
+body {
+  background-color: rgb(243, 255, 243);
 }
 .App {
   display: grid;
@@ -44,10 +55,10 @@ nav a {
   margin: 20px;
 }
 nav {
-  text-align: right;
-  padding-right: 60px;
+  text-align: center;
 }
 .articles_list {
+  align-content: center;
   margin-top: 20px;
 
   display: grid;
@@ -56,6 +67,7 @@ nav {
   align-content: center;
   padding: 0;
   text-align: justify;
+  margin: 20px;
 }
 .card h3 {
   font-weight: bold;
@@ -122,6 +134,7 @@ a:hover {
 }
 .author {
   font-style: italic;
+  font-weight: bold;
   color: rgb(77, 77, 77);
 }
 .Recent_Articles {
@@ -138,6 +151,9 @@ a:hover {
   padding-left: 0;
   align-content: center;
   margin: 0;
+  max-width: 550px;
+  border-radius: 10px;
+  border: 1px solid rgb(202, 202, 202);
 }
 .comments {
   width: 500px;
@@ -160,12 +176,32 @@ a:hover {
   margin: 0;
 }
 .commentsspan {
+  width: 170px;
+  align-items: center;
+  padding: 10px;
   font-size: large;
   text-decoration: underline;
-  color: rgb(67, 67, 67);
+  color: green;
+
   font-weight: bold;
   font-size: medium;
+  border: 1px solid rgb(186, 186, 186);
+  border-radius: 5px;
 }
 .commentsspan :hover {
-  color: green;
+  color: blueviolet;
+}
+.votesUdate p {
+  font-size: medium;
+  color: rgb(87, 87, 87);
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.voteButton {
+  width: 2.5rem;
+  height: 1.5rem;
+  margin-right: 0.5rem;
+  float: left;
+  background-color: rgb(243, 252, 243);
+  border: 2px green solid;
+  border-radius: 10px;
 }
