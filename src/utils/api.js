@@ -50,3 +50,17 @@ export function GetCommentsById(article_id) {
     })
     .catch((error) => {});
 }
+export function PatchVotesById(article_id, updateVoteBy) {
+  const body = {
+    votes_inc_by: updateVoteBy,
+  };
+  return api
+    .patch(`/articles/${article_id}`, body)
+    .then(({ data }) => {
+      return data.article;
+    })
+    .catch((error) => {
+      console.log(error);
+      throw error;
+    });
+}

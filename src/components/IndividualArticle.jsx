@@ -1,8 +1,10 @@
 import { useState } from "react";
 import CommentsList from "./CommentsList";
 import Comments from "./Comments";
+import VoteAdder from "./VoteAdder";
 
 function IndividualArticle({
+  article_id,
   title,
   created_at,
   comments,
@@ -27,9 +29,9 @@ function IndividualArticle({
       <h1>{title}</h1>
       <p className="dateAndcomments">🕙 {date}</p>
       <img src={imageUrl} alt={title} />
-      <p className="author">
-        By: {author} &nbsp;&nbsp;&nbsp; ⬆️{votes}
-      </p>
+      <p className="author">By: {author}</p>
+
+      <VoteAdder article_id={article_id} votes={votes} />
       <p className="commentsspan">
         <span onClick={handleViewComments} style={{ cursor: "pointer" }}>
           View comments: 💬
@@ -39,11 +41,7 @@ function IndividualArticle({
         <>
           <Comments comments={comments} />
           <p className="commentsspan">
-            <span
-              className="commentsspan"
-              onClick={handleHideComments}
-              style={{ cursor: "pointer" }}
-            >
+            <span onClick={handleHideComments} style={{ cursor: "pointer" }}>
               Hide comments ⌃
             </span>
           </p>

@@ -1,7 +1,7 @@
 import { GetArticleById } from "../utils/api";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import IndividualArticleCard from "./IndividualArticle";
+import IndividualArticle from "./IndividualArticle";
 function IndividualArticleContainer() {
   const [currArticle, setCurrArticle] = useState({});
   const [isLoading, setIsLoading] = useState([]);
@@ -24,7 +24,7 @@ function IndividualArticleContainer() {
   }
   return (
     <>
-      <IndividualArticleCard
+      <IndividualArticle
         key={currArticle.article_id}
         article_id={currArticle.article_id}
         title={currArticle.title}
