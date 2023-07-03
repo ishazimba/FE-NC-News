@@ -13,8 +13,8 @@ To run the NC News Web App locally on your machine, please follow these steps:
 ### Installation
 
 1. [Clone the repository](https://github.com/ishazimba/FE-NC-News.git)
-2. Install dependencies:
-    ```
+
+    ```2. Install dependencies:
 npm install
  ```
 3. Start the app:
