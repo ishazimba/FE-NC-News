@@ -1,7 +1,19 @@
 #root {
   margin: 0 auto;
-  padding: 2rem;
+  padding: 0rem;
   text-align: center;
+}
+body {
+  margin: 0; /* Remove default margin */
+  padding: 0;
+  overflow-x: hidden;
+  width: 100%;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.mainContent {
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
 }
 /* Desktop styles */
 @media (min-width: 1024px) {
@@ -22,7 +34,7 @@
 }
 
 body {
-  background-color: rgb(243, 255, 243);
+  background-color: rgb(255, 255, 255);
 }
 .App {
   display: grid;
@@ -44,18 +56,59 @@ body {
       "nav content";
   }
 }
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  background-color: rgb(231, 255, 231);
+}
+.header h1 {
+  color: #333;
+}
+.navbar {
+  position: fixed;
+  margin-left: 0;
+  top: 80px;
+  left: 0;
+  width: 100%;
+  background-color: green;
+}
+
+.mainContent {
+  margin-top: 180px; /* Adjust the margin-top value to create space below the fixed header and navbar */
+}
+
 h1 {
-  font-size: 2.4em;
-  margin-bottom: 10px;
+  font-size: 2em;
+  margin-bottom: 20px;
   color: green;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 nav a {
-  margin: 20px;
+  padding-right: 4rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: normal;
+  font-size: 20px;
+  text-decoration: none;
+  color: #fff;
+  text-align: center;
 }
 nav {
   text-align: center;
+
+  justify-content: space-between;
+
+  padding: 20px;
+  padding-left: 25rem;
+
+  width: 100%;
+}
+.navbar_link:hover {
+  color: #333;
+  cursor: pointer;
 }
 .articles_list {
   align-content: center;
@@ -204,4 +257,14 @@ a:hover {
   background-color: rgb(243, 252, 243);
   border: 2px green solid;
   border-radius: 10px;
+}
+.commentForm {
+  margin: 20px;
+  padding: 10px;
+}
+.commentInput {
+  align-items: left;
+  width: 450px;
+  height: 50px;
+  text-align: left;
 }

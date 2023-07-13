@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { GetCommentsById } from "../utils/api";
 import CommentsList from "./CommentsList";
 import { useParams } from "react-router-dom";
+import { PostComment } from "../utils/api";
+import AddComments from "./AddComments";
 
 function Comments({}) {
   const { article_id } = useParams();
@@ -22,6 +24,7 @@ function Comments({}) {
 
   return (
     <>
+      <AddComments article_id={article_id} prevComments={comments} />
       <main className="commentsContainer">
         {comments.map((comment, index) => (
           <CommentsList

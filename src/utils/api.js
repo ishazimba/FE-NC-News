@@ -64,3 +64,14 @@ export function PatchVotesById(article_id, updateVoteBy) {
       throw error;
     });
 }
+export function PostComment(article_id, body) {
+  console.log(article_id);
+  return api
+    .post(`/articles/${article_id}`, body)
+    .then(({ data }) => {
+      return data.comments;
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+}

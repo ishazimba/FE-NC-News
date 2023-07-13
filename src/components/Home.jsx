@@ -21,7 +21,7 @@ function Home() {
   return (
     <>
       <main className="articles_list">
-        {currArticles.slice(0, 3).map((article, index) => {
+        {currArticles.slice(0, 6).map((article, index) => {
           return (
             <RecentArticles
               key={index}
