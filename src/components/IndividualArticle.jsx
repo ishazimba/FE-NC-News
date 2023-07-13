@@ -14,6 +14,7 @@ function IndividualArticle({
   body,
 }) {
   const [showComments, setShowComments] = useState(false);
+  const [articleComments, setArticleComments] = useState(comments);
 
   const date = new Date(created_at).toLocaleDateString();
 
