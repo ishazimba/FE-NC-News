@@ -67,7 +67,7 @@ export function PatchVotesById(article_id, updateVoteBy) {
 export function PostComment(article_id, body) {
   console.log(article_id);
   return api
-    .post(`/articles/${article_id}`, body)
+    .post(`/articles/${article_id}/comments`, body)
     .then(({ data }) => {
       return data.comments;
     })

@@ -2,18 +2,20 @@ import { useState } from "react";
 import { PostComment } from "../utils/api";
 
 function AddComments({ article_id, prevComments }) {
-  const [newComment, setNewComment] = useState(" ");
+  const [newComment, setNewComment] = useState("");
+  const [comments, setComments] = useState([]);
+
   // const [commentPosted, setCommentPosted] = useState(false);
   const handleSubmit = (event) => {
     event.preventDefault();
     const commentData = {
-      username: "ishazimba",
+      username: "grumpy19",
       body: newComment,
     };
     PostComment(article_id, commentData).then((comment) => {
-      prevComments((currComments) => [comment, ...currComments]);
+      setComments((prevComments) => [comment, ...prevComments]);
+      setNewComment("");
     });
-    setNewComment("");
   };
   return (
     <form className="commentForm" onSubmit={handleSubmit}>
